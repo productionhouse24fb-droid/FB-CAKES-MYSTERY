@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FB Cakes Mystery Message</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #fff0f6, #f7e7ff);
+        overflow: hidden;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 430px;
+        text-align: center;
+        background: white;
+        padding: 35px 25px;
+        border-radius: 25px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+
+    .logo {
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+        color: #b00068;
+        margin-bottom: 8px;
+    }
+
+    .subtitle {
+        color: #666;
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    .mystery-box {
+        background: linear-gradient(135deg, #d50070, #7b1fa2);
+        color: white;
+        width: 190px;
+        height: 150px;
+        margin: 0 auto 25px;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 65px;
+        box-shadow: 0 12px 25px rgba(123,31,162,0.3);
+    }
+
+    button {
+        border: none;
+        background: #d50070;
+        color: white;
+        padding: 15px 45px;
+        border-radius: 50px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+        box-shadow: 0 6px 15px rgba(213,0,112,0.3);
+    }
+
+    button:hover {
+        transform: scale(1.05);
+        background: #b0005c;
+    }
+
+    .message {
+        display: none;
+        margin-top: 25px;
+        padding: 20px;
+        border-radius: 15px;
+        background: #fff4fa;
+        color: #8a0050;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 1.5;
+        animation: reveal 0.6s ease;
+    }
+
+    .small-text {
+        margin-top: 25px;
+        font-size: 12px;
+        color: #999;
+    }
+
+    @keyframes reveal {
+        from {
+            opacity: 0;
+            transform: scale(0.7);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Replace this with your FB Cakes logo -->
+    <img src="logo.png" class="logo" alt="FB Cakes">
+
+    <h1>🎁 Mystery Message</h1>
+
+    <p class="subtitle">
+        Something special is waiting for you...
+    </p>
+
+    <div class="mystery-box">
+        🎁
+    </div>
+
+    <button onclick="revealMessage()">
+        REVEAL
+    </button>
+
+    <div id="message" class="message"></div>
+
+    <div class="small-text">
+        FB Cakes • Love at First Bite ❤️
+    </div>
+
+</div>
+
+<script>
+
+const messages = [
+
+    "🎉 Congratulations! You unlocked a special surprise from FB Cakes!",
+
+    "🍰 Sweet moments are better with FB Cakes!",
+
+    "🎁 You found the mystery message! Visit FB Cakes for something delicious!",
+
+    "❤️ Love at First Bite! Your sweet surprise is waiting!",
+
+    "😋 Life is short. Eat more cake!",
+
+    "🥳 Today is a perfect day for something sweet!",
+
+    "🍫 A little chocolate can make everything better!",
+
+    "🧁 Your mystery message says: Treat yourself today!",
+
+    "✨ Something sweet is coming your way!",
+
+    "🎂 Cake makes every celebration better!",
+
+    "💝 You deserve a delicious surprise from FB Cakes!",
+
+    "🔥 Don't just reveal the message... reveal your sweet tooth!"
+
+];
+
+
+// Select a random message every time the page loads
+let randomMessage = messages[
+    Math.floor(Math.random() * messages.length)
+];
+
+
+function revealMessage() {
+
+    const messageBox = document.getElementById("message");
+
+    messageBox.innerHTML = randomMessage;
+
+    messageBox.style.display = "block";
+
+}
+
+</script>
+
+</body>
+</html>
